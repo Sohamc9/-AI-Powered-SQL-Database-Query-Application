@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0b0f19;
+    color: #f1f5f9;
+  }
+
+  /* Custom clean scrollbars */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+/* CodeMirror customizations for dark theme */
+.cm-editor {
+  height: 100% !important;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  background-color: transparent !important;
+}
+
+.cm-scroller {
+  overflow: auto !important;
+  font-family: inherit !important;
+}
+
+.cm-gutters {
+  background-color: #0f172a !important;
+  color: #64748b !important;
+  border-right: 1px solid #1e293b !important;
+}
+
+.cm-activeLineGutter {
+  background-color: #1e293b !important;
+  color: #94a3b8 !important;
+}
+
+.cm-activeLine {
+  background-color: rgba(56, 189, 248, 0.05) !important;
+}
+
+.cm-cursor {
+  border-left-color: #38bdf8 !important;
+  border-left-width: 2px !important;
+}
+
+/* Light mode overrides */
+html:not(.dark) body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html:not(.dark) .cm-gutters {
+  background-color: #f1f5f9 !important;
+  color: #94a3b8 !important;
+  border-right: 1px solid #e2e8f0 !important;
+}
+
+html:not(.dark) .cm-activeLine {
+  background-color: rgba(14, 165, 233, 0.08) !important;
+}
